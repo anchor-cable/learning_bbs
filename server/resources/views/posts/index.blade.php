@@ -12,6 +12,9 @@
                         {!! nl2br(e(str_limit($post->body, 200))) !!}
                     </p>
                 </div>
+                <a class="card-link" href="{{ route('posts.show', ['post' => $post]) }}">
+                    続きを読む
+                </a>
                 <div class="card-footer">
                     <span class="mr-2">
                         投稿日時 {{ $post->created_at->format('Y.m.d') }}
@@ -25,5 +28,10 @@
                 </div>
             </div>
         @endforeach
+    </div>
+    <div class="mb-4">
+        <a href="{{ route('posts.create') }}" class="btn btn-primary">
+            投稿を新規作成する
+        </a>
     </div>
 @endsection
