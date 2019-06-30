@@ -1,4 +1,5 @@
 FROM php:7.2-apache
+RUN  a2enmod rewrite
 COPY ./php/php.ini /usr/local/etc/php/
 COPY ./apache/*.conf /etc/apache2/sites-enabled/
 
